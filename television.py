@@ -11,7 +11,6 @@ class Television:
         self.__channel = Television.MIN_CHANNEL
         self.__premute = self.__volume
         pass
-    pass
 
     def power(self):
         if self.__status:
@@ -21,7 +20,6 @@ class Television:
             self.__status = True
             pass
         pass
-    pass
 
     def mute(self):
         if self.__status:
@@ -32,7 +30,6 @@ class Television:
                 self.__muted = True
             pass
         pass
-    pass
 
     def channel_up(self):
         if self.__status:
@@ -44,7 +41,6 @@ class Television:
                 pass
             pass
         pass
-    pass
 
     def channel_down(self):
         if self.__status:
@@ -56,7 +52,6 @@ class Television:
                 pass
             pass
         pass
-    pass
 
     def volume_up(self):
         if self.__status:
@@ -68,6 +63,12 @@ class Television:
         pass
 
     def volume_down(self):
+        if self.__status:
+            self.__muted = False
+            if self.__volume > Television.MIN_VOLUME:
+                self.__volume -= 1
+                pass
+            pass
         pass
 
     def __str__(self):
@@ -76,4 +77,3 @@ class Television:
         else:
             return f'Power = {self.__status}, Channel = {self.__channel}, Volume = {self.__volume}'
         pass
-    pass

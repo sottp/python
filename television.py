@@ -4,15 +4,17 @@ class Television:
     MIN_CHANNEL = 0
     MAX_CHANNEL = 3
 
-    def __init__(self):
-        self.__status = False
-        self.__muted = False
-        self.__volume = Television.MIN_VOLUME
-        self.__channel = Television.MIN_CHANNEL
-        self.__premute = self.__volume
+    def __init__(self) -> None:
+        """
+        initializes variables
+        """
+        self.__status: bool = False
+        self.__muted: bool = False
+        self.__volume: int = Television.MIN_VOLUME
+        self.__channel: int = Television.MIN_CHANNEL
         pass
 
-    def power(self):
+    def power(self) -> None:
         """
         used to turn off and on the tv
         """
@@ -24,7 +26,7 @@ class Television:
             pass
         pass
 
-    def mute(self):
+    def mute(self) -> None:
         """
         used to mute and unmute the tv while it is powered on
         """
@@ -37,7 +39,7 @@ class Television:
             pass
         pass
 
-    def channel_up(self):
+    def channel_up(self) -> None:
         """
         used to increase the tv channel value while the tv is powered on
         """
@@ -51,7 +53,7 @@ class Television:
             pass
         pass
 
-    def channel_down(self):
+    def channel_down(self) -> None:
         """
         used to decrease the tv channel value while the tv is powered on
         """
@@ -65,7 +67,7 @@ class Television:
             pass
         pass
 
-    def volume_up(self):
+    def volume_up(self) -> None:
         """
         used to increase the tv volume while the tv is powered on
         """
@@ -77,7 +79,7 @@ class Television:
             pass
         pass
 
-    def volume_down(self):
+    def volume_down(self) -> None:
         """
         used to decrease the tv volume while it is powered on
         """
@@ -89,9 +91,10 @@ class Television:
             pass
         pass
 
-    def __str__(self):
+    def __str__(self) -> str:
         """
-        used to show the tv status
+        puts power, channel, and volume values into format
+        :return: power, channel, and volume values
         """
         if self.__muted:
             return f'Power = {self.__status}, Channel = {self.__channel}, Volume = {Television.MIN_VOLUME}'

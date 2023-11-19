@@ -6,7 +6,7 @@ class Television:
 
     def __init__(self) -> None:
         """
-        initializes variables
+        initializes some variables
         """
         self.__status: bool = False
         self.__muted: bool = False
